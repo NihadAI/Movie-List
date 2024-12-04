@@ -1,7 +1,5 @@
 "use client"
-import { Search } from 'lucide-react';
 import { SignInButton, useUser } from '@clerk/nextjs';
-import Link from 'next/link';
 import DropdownUser from './Dropdownuser';
 
 

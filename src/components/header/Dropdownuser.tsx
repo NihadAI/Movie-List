@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChevronDown, LogOut, Notebook, Settings2, User2 } from 'lucide-react';
+import { ChevronDown, LogOut } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
