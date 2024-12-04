@@ -32,6 +32,7 @@
     "react-hook-form": "^7.53.2",
     "redux-persist": "^6.0.0",
     "shadcn": "^2.1.6",
+    "svix": "^1.42.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^7.4.0",
