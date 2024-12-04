@@ -6,7 +6,9 @@ import MovieForm from './upload/form'
 
 
 
-const Layout = ({children}: {children: ReactNode}) => {
+const Layout = ({children, uploadedImage}: {children: ReactNode, uploadedImage: string | undefined}) => {
+  console.log(uploadedImage);
+  
 
   return (
     <MaxWidthWrapper className='flex flex-1 flex-col mt-10'>
@@ -16,7 +18,7 @@ const Layout = ({children}: {children: ReactNode}) => {
         <div className='flex-row flex-1 w-full grid grid-cols-2 gap-4 justify-between'>
             {children}
             <div className='flex flex-col w-3/4 justify-center'>
-                <MovieForm/>
+                <MovieForm imageUrl={uploadedImage || undefined}/>
             </div>
         </div>
     </MaxWidthWrapper>

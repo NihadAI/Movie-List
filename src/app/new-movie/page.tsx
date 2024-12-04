@@ -7,16 +7,25 @@ import { cn } from '@/lib/utils'
 import { Download, Loader2, MousePointerSquareDashed } from 'lucide-react'
 import { useState } from 'react'
 import Dropzone, { FileRejection } from 'react-dropzone'
+import Layout from './layout'
 
 export default function Page() {
     const [isDragOver, setIsDragOver] = useState<boolean>(false)
     const [uploadProgress, setUploadProgress] = useState(0)
-    const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+    const [uploadedImage, setUploadedImage] = useState<string | undefined>(undefined);
     const {toast} = useToast()
 
     const { startUpload, isUploading } = useUploadThing("imageUploader", {
         onClientUploadComplete: ([data]) => {
-          setUploadedImage(data.url); // Save the uploaded image URL
+            if (data && data.url) {
+                const imageUrl = data.url;
+                setUploadedImage(imageUrl); // Save the uploaded image URL
+                console.log(imageUrl);
+                
+              } else {
+                console.log("Image URL not found in response");
+              }
+            // setUploadedImage(imageUrl) // Save the uploaded image URL
         },
         onUploadProgress(p) {
             setUploadProgress(p)
@@ -65,6 +74,10 @@ export default function Page() {
                 </Dropzone>
             )}
 
+        </div>
+        <div className='mt-10 hidden'>
+            <Layout children={""} uploadedImage={uploadedImage || undefined}>
+            </Layout>
         </div>
     </div>
   )

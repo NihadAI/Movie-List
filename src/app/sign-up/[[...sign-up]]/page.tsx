@@ -24,7 +24,7 @@ export default function SignUpPage() {
                 type="email"
                 placeholder='Email'
                 required
-                className="w-full rounded-md bg-input px-3.5 py-3.5 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
+                className="w-full rounded-md text-white bg-input px-3.5 py-3.5 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
               />
               <Clerk.FieldError className="block text-sm text-red-400" />
             </Clerk.Field>
@@ -33,7 +33,7 @@ export default function SignUpPage() {
                 type="password"
                 placeholder='Password'
                 required
-                className="w-full rounded-md bg-input px-3.5 py-3.5 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
+                className="w-full rounded-md text-white bg-input px-3.5 py-3.5 text-sm outline-none ring-1 ring-inset ring-zinc-300 hover:ring-zinc-400 focus:ring-[1.5px] focus:ring-zinc-950 data-[invalid]:ring-red-400"
               />
               <Clerk.FieldError className="block text-sm text-red-400" />
             </Clerk.Field>
@@ -60,7 +60,7 @@ export default function SignUpPage() {
           className="w-full space-y-6 rounded-2xl shadow-none px-4 py-10 ring-1 ring-black/5 sm:w-96 sm:px-8"
         >
           <header className="text-center">
-            <h1 className="mt-4 text-xl font-medium tracking-tight text-white">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-white">
               Verify email code
             </h1>
           </header>
