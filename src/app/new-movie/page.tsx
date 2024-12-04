@@ -77,7 +77,7 @@ export default function Page() {
         </div>
         <div className='mt-10 hidden'>
             <Layout uploadedImage={uploadedImage || undefined}>
-                {uploadProgress}
+                
             </Layout>
         </div>
     </div>

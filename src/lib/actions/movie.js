@@ -1,7 +1,3 @@
-"use server"
-import Movie from '../models/movie.model';
-import { connect } from '../mongodb/mongoose.js';
-
 // export const createMovie = async (url, title, year) => {
 //   try {
 //     await connect();
@@ -21,21 +17,22 @@ import { connect } from '../mongodb/mongoose.js';
 //     console.log('Error creating movie:', error);
 //   }
 // };
+import { connect } from '../mongodb/mongoose'; // Update path
+import Movie from '../models/movie.model'; // Update path
 
-export const createMovie = async (data) => {
+export async function saveMovie({ title, year, url }) {
+  await connect(); // Ensure database connection
+
   try {
-    await connect();
-    console.log("connected to MongoDB");
-
-    const movie = new Movie(data);
-    await movie.save();
-
-    return movie;
+    const newMovie = new Movie({ title, year, url });
+    await newMovie.save();
+    console.log('Movie saved successfully:', newMovie);
+    return { success: true, movie: newMovie };
   } catch (error) {
-    console.error('Error creating movie:', error);
-    throw error;
+    console.error('Error saving movie:', error);
+    throw new Error('Failed to save movie');
   }
-};
+}
 
 export const updateMovie = async (id, url, title, year) => {
   try {
