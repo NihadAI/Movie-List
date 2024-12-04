@@ -76,7 +76,8 @@ export default function Page() {
 
         </div>
         <div className='mt-10 hidden'>
-            <Layout children={""} uploadedImage={uploadedImage || undefined}>
+            <Layout uploadedImage={uploadedImage || undefined}>
+                {uploadProgress}
             </Layout>
         </div>
     </div>
